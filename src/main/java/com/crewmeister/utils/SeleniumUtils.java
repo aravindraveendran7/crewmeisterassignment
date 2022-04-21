@@ -15,7 +15,7 @@ public final class SeleniumUtils {
 
     public  static void click(By by, String elementName){
         waitUntilElementPresent(by).click();
-        ExtentLogger.pass(elementName+"is clicked successfully");
+        ExtentLogger.pass(elementName+" is clicked successfully");
     }
 
     public  static void click(By by, WaitType waitType){

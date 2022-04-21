@@ -18,7 +18,7 @@ public final class LoginPage {
         SeleniumUtils.sendKeys(TXT_PASSWORD,password,"password");
         return this;
     }
-    public  TimeOverViewPage clickOnSignInBtn(String password){
+    public  TimeOverViewPage clickOnSignInBtn(){
         SeleniumUtils.click(BTN_SIGNIN,"signin button");
         return new TimeOverViewPage();
     }

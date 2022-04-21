@@ -19,6 +19,7 @@ public final class ExtentReport {
     public static void  flushReports(){
         extentReport.flush();
     }
+
     public static void createNodeInTestReport(String testCaseName){
         extentTest = extentReport.createTest(testCaseName);
         ExtentReportManager.setExtentTest(extentTest);
