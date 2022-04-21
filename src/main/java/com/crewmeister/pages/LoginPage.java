@@ -9,18 +9,23 @@ public final class LoginPage {
     private static final By TXT_PASSWORD=By.name("password");
     private static final By BTN_SIGNIN      =By.id("user-sign-in");
 
-    public LoginPage setUserName(String userName){
+    private LoginPage setUserName(String userName){
         SeleniumUtils.sendKeys(TXT_USERNAME,userName,"username");
         return this;
     }
 
-    public LoginPage setPassword(String password){
+    private LoginPage setPassword(String password){
         SeleniumUtils.sendKeys(TXT_PASSWORD,password,"password");
         return this;
     }
-    public  TimeOverViewPage clickOnSignInBtn(){
+    private   TimeOverViewPage clickOnSignInBtn(){
         SeleniumUtils.click(BTN_SIGNIN,"signin button");
         return new TimeOverViewPage();
+    }
+
+    public TimeOverViewPage loginToApplication(String userName,String password){
+        return setUserName(userName).setPassword(password).clickOnSignInBtn();
+
     }
 
 }

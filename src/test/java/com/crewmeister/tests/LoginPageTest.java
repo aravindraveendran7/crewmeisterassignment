@@ -7,6 +7,7 @@ public class LoginPageTest extends BaseTest {
 
     @Test
     public void  test1(){
-        new LoginPage().setUserName("crewmeister-qa5@mailinator.com").setPassword("apxm963d").clickOnSignInBtn();
+        new LoginPage()
+                .loginToApplication("crewmeister-qa5@mailinator.com","apxm963d");
     }
 }

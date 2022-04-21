@@ -5,6 +5,7 @@ import com.crewmeister.driver.DriverManager;
 import com.crewmeister.enums.WaitType;
 import com.crewmeister.reports.ExtentLogger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,12 +19,13 @@ public final class SeleniumUtils {
         ExtentLogger.pass(elementName+" is clicked successfully");
     }
 
-    public  static void click(By by, WaitType waitType){
+    public  static void click(By by, WaitType waitType,String elementName){
         if (waitType== WaitType.PRESENCE){
             waitUntilElementPresent(by).click();
         }else if (waitType==WaitType.CLICKABLE){
             waitUntilElementClickable(by).click();
         }
+        ExtentLogger.pass(elementName+" is clicked successfully");
     }
     public  static void sendKeys(By by,String requiredUserData,String elementName){
         waitUntilElementPresent(by).sendKeys(requiredUserData);
@@ -37,5 +39,10 @@ public final class SeleniumUtils {
     private static WebElement waitUntilElementClickable(By by) {
         WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
         return wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static void clickElementByJS(By by) {
+        JavascriptExecutor js = (JavascriptExecutor)DriverManager.getDriver();
+        js.executeScript("arguments[0].click();", by);
     }
 }
