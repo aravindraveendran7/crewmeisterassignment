@@ -18,7 +18,6 @@ public final class SeleniumUtils {
         waitUntilElementPresent(by).click();
         ExtentLogger.pass(elementName+" is clicked successfully");
     }
-
     public  static void click(By by, WaitType waitType,String elementName){
         if (waitType== WaitType.PRESENCE){
             waitUntilElementPresent(by).click();
@@ -30,7 +29,9 @@ public final class SeleniumUtils {
     public  static void sendKeys(By by,String requiredUserData,String elementName){
         waitUntilElementPresent(by).sendKeys(requiredUserData);
         ExtentLogger.pass(requiredUserData+" is entered successfully in "+elementName);
-
+    }
+    public  static  String getText(By by){
+        return waitUntilElementVisible(by).getText();
     }
     private static WebElement waitUntilElementPresent(By by) {
         WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
@@ -40,9 +41,9 @@ public final class SeleniumUtils {
         WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
         return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
-
-    public static void clickElementByJS(By by) {
-        JavascriptExecutor js = (JavascriptExecutor)DriverManager.getDriver();
-        js.executeScript("arguments[0].click();", by);
+    private static WebElement waitUntilElementVisible(By by) {
+        WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
+
 }
