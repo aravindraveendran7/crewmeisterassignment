@@ -1,23 +1,26 @@
 package com.crewmeister.pages;
 
-import com.crewmeister.pages.pageComponents.TopMenu;
-import org.openqa.selenium.By;
-
-import java.util.concurrent.TimeUnit;
+import com.crewmeister.pages.pageComponents.TopMenuComponent;
+import lombok.SneakyThrows;
 
 public final class TimeOverViewPage {
-
-    TopMenu topMenu;
+    TopMenuComponent topMenuComponent;
     public TimeOverViewPage(){
-        topMenu=new TopMenu();
+        topMenuComponent =new TopMenuComponent();
     }
 
-    public TimeOverViewPage clickOnTopMenuItem(String locator,String topMenuItemName){
-        topMenu.clickOnTopMenuItem(locator,topMenuItemName);
-        return this;
+    @SneakyThrows
+    public <T> T clickOnTopMenuItem(String locator, String topMenuItemName, Class<T> tClass){
+        topMenuComponent.clickOnTopMenuItem(locator,topMenuItemName,tClass);
+        return tClass.newInstance();
+
     }
     public String getNotifierLabelText(){
-        return topMenu.getNotifierLabelText();
+        return topMenuComponent.getNotifierLabelText();
+    }
+    public LoginPage clickOnSignOut(){
+        return topMenuComponent.clickOnSignOut();
+
     }
 
 
