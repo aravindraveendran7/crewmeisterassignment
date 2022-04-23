@@ -4,7 +4,6 @@ import com.crewmeister.enums.WaitType;
 import com.crewmeister.locatorFactories.LocatorFactory;
 import com.crewmeister.pages.pageComponents.AddNewEmployeeComponent;
 import com.crewmeister.utils.SeleniumUtils;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import org.openqa.selenium.By;
 
 public final class SettingsPage {
