@@ -1,11 +1,8 @@
 package com.crewmeister.pages.pageComponents;
 
 import com.crewmeister.driver.DriverManager;
-import com.crewmeister.driver.LocalDriverFactory;
-import com.crewmeister.enums.WaitType;
 import com.crewmeister.locatorFactories.LocatorFactory;
 import com.crewmeister.utils.SeleniumUtils;
-import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 
 public final class IndividualSettingsComponent {

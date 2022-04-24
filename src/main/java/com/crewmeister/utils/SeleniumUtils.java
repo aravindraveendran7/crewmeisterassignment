@@ -51,11 +51,11 @@ public final class SeleniumUtils {
         return waitUntilElementVisible(by).getText();
     }
 
-    public static void selectValueInDropDown(By by, Consumer<Select> consumer) {
+    public static void selectValueInDropDown(By by, Consumer<Select> consumer,String language) {
         WebElement element = waitUntilElementPresent(by);
         Select select = new Select(element);
         consumer.accept(select);
-        ExtentLogger.pass(consumer + " is selected from DropDown");
+        ExtentLogger.pass(language + " is selected from DropDown");
     }
 
     public static void clickElementByJS(By by, String elementName) {

@@ -23,7 +23,7 @@ public final class AddNewEmployeeComponent {
     }
 
     private AddNewEmployeeComponent selectLanguage(String selectLanguage){
-        SeleniumUtils.selectValueInDropDown(SELECT_LANGUAGE, select -> select.selectByValue(selectLanguage));
+        SeleniumUtils.selectValueInDropDown(SELECT_LANGUAGE, select -> select.selectByValue(selectLanguage),selectLanguage);
         return  this;
     }
     private SettingsPage clickOnSaveBtn(){

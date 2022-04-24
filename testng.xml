@@ -6,8 +6,12 @@
     </listeners>
     <test name="crewmeisterassignment" parallel="methods" thread-count="2">
         <classes>
-<!--            <class name="com.crewmeister.tests.LoginPageTest"/>-->
-            <class name="com.crewmeister.tests.TimeOverViewPageTests"/>
+            <class name="com.crewmeister.tests.TimeOverViewPageTests">
+                <methods>
+                    <include name="ValidateOwnerOfTheCrewIsDisplayed"> </include>
+                    <include name="validateEmployeeIsAssignedToTeam"> </include>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

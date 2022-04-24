@@ -13,11 +13,13 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class TimeOverViewPageTests extends BaseTest {
 
-    @Test(dataProvider = "getData",description = "To validate whether user is able to see Owner of the crew in the in Time Tracking overview Page")
+    @Test(dataProvider = "getData",description = "To validate whether user is able to see Owner of the crew in Time Tracking Page")
     @FrameworkAnnotation(author = "Aravind",catergory = "Smoke")
-    public void validateMemberNameIsDisplayed(TestData testData){
+    public void ValidateOwnerOfTheCrewIsDisplayed(TestData testData){
         Boolean flag = new LoginPage()
                 .loginToApplication(testData.getUsername(), testData.getPassword())
                 .navigateToSettingsPage()
@@ -27,12 +29,14 @@ public class TimeOverViewPageTests extends BaseTest {
                 .addTeams("xpath", "Team name", testData.getTeamName())
                 .navigateToTimeTrackingMenu("xpath", "Time Tracking")
                 .validateUserAddedIsAvailableInTable("1407 Test Crew 5");
-        Assertions.assertThat(flag).isTrue();
+        assertThat(flag)
+                .withFailMessage(()->"The crew owner 1407 Test Crew 5 is not found in the log")
+                .isTrue();
     }
 
     @Test(dataProvider = "getData",description = "To validate whether user is able to assign employee to a team and is diplayed in Time Tracking Page")
     @FrameworkAnnotation(author = "Aravind",catergory = "Regression")
-    public void validateTeamAndMemberIsEnabled(TestData testData){
+    public void validateEmployeeIsAssignedToTeam(TestData testData){
         Boolean flag = new LoginPage()
                 .loginToApplication(testData.getUsername(), testData.getPassword())
                 .navigateToSettingsPage()
@@ -46,7 +50,9 @@ public class TimeOverViewPageTests extends BaseTest {
                 .selectTeamToEnable("xpath", testData.getTeamName())
                 .selectMemberNameToEnable("xpath", testData.getEmployeeName())
                 .validateUserAddedIsAvailableInTable(testData.getEmployeeName());
-        Assertions.assertThat(flag).isTrue();
+        assertThat(flag)
+                .withFailMessage(()->"The Employee Added to the team is not displayed in the log")
+                .isTrue();
     }
 
     @DataProvider
