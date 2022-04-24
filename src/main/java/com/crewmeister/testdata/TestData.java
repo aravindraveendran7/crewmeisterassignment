@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 public class TestData {
 
+    private String username;
+    private String password;
     private String crewName;
     private String employeeName;
     private String employeeEmail;

@@ -48,12 +48,8 @@ public final class TimeOverViewPage {
     }
     public TimeOverViewPage selectMemberNameToEnable(String locator,String memberToEnable){
         SeleniumUtils.click(DROPDWN_MEMBER_NAME,WaitType.VISIBLE,"Member Name DropDown");
-        SeleniumUtils.click(LocatorFactory.getLocator(locator,String.format(selectCheckBoxByMember,memberToEnable)),WaitType.VISIBLE,memberToEnable);
+        SeleniumUtils.click(LocatorFactory.getLocator(locator,String.format(selectCheckBoxByMember,memberToEnable)),WaitType.PRESENCE,memberToEnable);
         return this;
-    }
-    public  void clickOnEmployeeByName(String valueToFind){
-         SeleniumUtils.clickOnTableCellByName(TABLE_ROW,TABLE_COL,strXpathCell,valueToFind);
-
     }
 
 

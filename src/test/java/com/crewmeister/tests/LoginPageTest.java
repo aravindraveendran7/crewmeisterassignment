@@ -1,6 +1,7 @@
 package com.crewmeister.tests;
 
 import com.crewmeister.pages.LoginPage;
+import com.crewmeister.testdata.TestData;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 

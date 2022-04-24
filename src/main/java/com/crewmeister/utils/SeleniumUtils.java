@@ -94,39 +94,40 @@ public final class SeleniumUtils {
         return flag;
     }
 
-        private static WebElement waitUntilElementPresent (By by){
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
-            return wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        }
-        private static WebElement waitUntilElementClickable (By by){
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
-            return wait.until(ExpectedConditions.elementToBeClickable(by));
-        }
-        private static WebElement waitUntilElementVisible (By by){
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        }
+    private static WebElement waitUntilElementPresent (By by){
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
+        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+    private static WebElement waitUntilElementClickable (By by){
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
+        return wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+    private static WebElement waitUntilElementVisible (By by){
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), ConfigFactory.getConfig().timeout());
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
 
 
-    public static void clickOnTableCellByName(By tableRow, By tableColumn, String xpathCellData, String valueToFind) {
+    public static boolean clickOnTableCellByName(By tableRow, By tableColumn, String xpathCellData, String valueToFind) {
         int rowCount = waitUntilElementVisible(tableRow).findElements(tableRow).size();
         int colcount = waitUntilElementVisible(tableColumn).findElements(tableColumn).size();
         boolean flag = false;
         for (int i = 0; i < rowCount; i++) {
-            for (int j = 2; j <= colcount; j++) {
+            for (int j = 1; j < colcount; j++) {
                 String capturedText = waitUntilElementVisible(LocatorFactory.getLocator("xpath", String.format(xpathCellData, i, j))).getText();
                 if (capturedText.equalsIgnoreCase(valueToFind)) {
                     flag = true;
+                    clickElementByJS(LocatorFactory.getLocator("xpath", String.format(xpathCellData, i, j)),valueToFind);
                     ExtentLogger.pass(valueToFind + " is found in the table");
                     break;
                 }
             }
             if (flag) {
                 break;
-            }
-            ExtentLogger.fail(valueToFind + " is not found in the table");
+            }else
+               continue;
         }
 
+        return flag;
     }
-
-    }
+}
