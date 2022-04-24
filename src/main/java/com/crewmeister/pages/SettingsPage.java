@@ -3,6 +3,7 @@ package com.crewmeister.pages;
 import com.crewmeister.enums.WaitType;
 import com.crewmeister.locatorFactories.LocatorFactory;
 import com.crewmeister.pages.pageComponents.AddNewEmployeeComponent;
+import com.crewmeister.pages.pageComponents.TopMenuComponent;
 import com.crewmeister.utils.SeleniumUtils;
 import org.openqa.selenium.By;
 
@@ -17,9 +18,11 @@ public final class SettingsPage {
 
 
     private AddNewEmployeeComponent addNewEmployeeComponent;
+    private TopMenuComponent topMenuComponent;
 
     public SettingsPage(){
         addNewEmployeeComponent= new AddNewEmployeeComponent();
+        topMenuComponent=new TopMenuComponent();
     }
     public SettingsPage setCrewName(String crewName){
         SeleniumUtils.click(CLOSE,"Clear Input Field");
@@ -37,14 +40,15 @@ public final class SettingsPage {
         SeleniumUtils.click(BTN_SAVE,"Save Button");
         return  this;
     }
-
-//    public SettingsPage setTeamName(String locator,String teamName){
-//        SeleniumUtils.click(LocatorFactory.getLocator(locator,teamName),"Team Name");
-//    }
     public SettingsPage AddNewEmployee(String employeeName,String employeeEmail,String language){
         addNewEmployeeComponent.AddNewEmployee(employeeName,employeeEmail,language);
         return this;
     }
+    public TimeOverViewPage navigateToTimeTrackingMenu(String locator,String value){
+      topMenuComponent.clickOnTimeTracking();
+      return new TimeOverViewPage();
+    }
+
 
 
 }
