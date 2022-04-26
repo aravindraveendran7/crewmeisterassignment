@@ -61,8 +61,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 #Report Interpretation
 ------------
 1.Dashboard view clearly indicates the start time, end time of the run, number of tests passed and failed. It also shows the time took for the individual tests in form of timeline. Hover the mouse over the timeline to get the exact time details.
-
-
+![Screenshot](Dashboard.png)
 
 2.Tags tab in the Dashboard view clearly indicates the pass and fail according to the functionality.
 
