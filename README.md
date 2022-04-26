@@ -1,8 +1,8 @@
 # Crewmeister Assignment
 
 ---
-## Libraries Used:
 
+## Libraries Used:
 ----------
 **1.Selenium         -** Web Automation
 
@@ -21,7 +21,6 @@
 Note:All the above mentioned libraries are open-source and does not include any license.
 
 #Capabilities:
-
 ------------
 1.Web Tests can be run on chrome or edge browsers.
 
@@ -32,7 +31,6 @@ Note:All the above mentioned libraries are open-source and does not include any 
 4.Integration with Jenkins for scheduling is easy
 
 #Adding more tests:
-
 -----------
 Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
