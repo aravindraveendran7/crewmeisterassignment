@@ -1,6 +1,5 @@
 # Crewmeister Assignment
-
----
+----------
 
 ## Libraries Used:
 ----------
@@ -63,7 +62,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 ------------
 1.Dashboard view clearly indicates the start time, end time of the run, number of tests passed and failed. It also shows the time took for the individual tests in form of timeline. Hover the mouse over the timeline to get the exact time details.
 
-![alt text]https://github.com/aravindraveendran7/readmeimages/Dashboard.png
+
 
 2.Tags tab in the Dashboard view clearly indicates the pass and fail according to the functionality.
 
@@ -73,4 +72,4 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 5.After each test run, reports can be found under root directory and ExtentReports folder.
 
-![alt text]https://github.com/aravindraveendran7/readmeimages/TestCases.png
+
