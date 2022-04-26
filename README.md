@@ -20,7 +20,7 @@
 
 Note:All the above mentioned libraries are open-source and does not include any license.
 
-##Capabilities:
+#Capabilities:
 
 ------------
 1.Web Tests can be run on chrome or edge browsers.
@@ -31,7 +31,7 @@ Note:All the above mentioned libraries are open-source and does not include any 
 
 4.Integration with Jenkins for scheduling is easy
 
-##Adding more tests:
+#Adding more tests:
 
 -----------
 Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
@@ -44,8 +44,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 4.Have maximum of one to two assertions per test.
 
-##Running Tests:
-
+#Running Tests:
 ----------
 Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
@@ -62,8 +61,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 **Note:**User should not try to run the test from test class - Might end up in NPE. Because the listeners are configured only in testng.xml
 
-##Report Interpretation:
-
+#Report Interpretation
 ------------
 1.Dashboard view clearly indicates the start time, end time of the run, number of tests passed and failed. It also shows the time took for the individual tests in form of timeline. Hover the mouse over the timeline to get the exact time details.
 
