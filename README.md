@@ -111,8 +111,27 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 2.Login to Jenkins
 
 3.Create Maven Project(Add maven plugin if not present)
-
 ![Screenshot](readmeimages/MavenProject.png)
+
+4.Configure choice parameters to run different maven profiles
+![Screenshot](readmeimages/ChoiceParameters.png)
+
+5.Configure goal and options
+
+![Screenshot](readmeimages/Goals.png)
+
+6.Choose custom workspace and give the project location
+
+![Screenshot](readmeimages/Workspace.png)
+
+7.To run,select build with parameters -> Choose profile -> Click build
+
+![Screenshot](readmeimages/Build.png)
+
+8.View the results in the console output
+
+![Screenshot](readmeimages/logs.png)
+
 
 
 
