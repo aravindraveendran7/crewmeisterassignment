@@ -106,28 +106,13 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 #Jenkins Integration
 
 -----------
-1.This project can be easily integrated with Jenkins
+1.This project can be integrated easily with Jenkins.
 
 2.Login to Jenkins
 
 3.Create Maven Project(Add maven plugin if not present)
+
 ![Screenshot](readmeimages/MavenProject.png)
-
-
-4.Configure choice parameters to run different maven profiles
-
-
-
-5.Configure goal and options
-
-
-6.Choose custom workspace and give the project location
-
-
-7.To run,select Build with parameters -> Choose profile -> Click Build
-
-
-8.View the results in the console output
 
 
 
