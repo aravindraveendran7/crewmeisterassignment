@@ -1,7 +1,7 @@
 # Crewmeister Assignment
 ----------
 
-##Abstract Idea about the application:
+## Abstract Idea about the application:
 
 ----------
 
@@ -17,7 +17,7 @@
 
 6.User can adjust and do manual correction in stamps
 
-##Keynotes:
+## Keynotes:
 
 -----------
 1.Test cases added would validate following business scenarios:
