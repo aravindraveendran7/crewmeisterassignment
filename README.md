@@ -1,6 +1,36 @@
 # Crewmeister Assignment
 ----------
 
+#Abstract Idea about the application:
+
+----------
+
+1.User can amend or add a crew,add employees and add team
+
+2.User can assign an employee to a team or a team to an employee
+
+3.User can assign the role as manager,accountant from the individual settings
+
+4.Changes made in the settings will be visible in the Time Tracking page in the table,from where user can enable team or member
+
+5.User can clock the working time by clicking on the start button,can clock breaks,add notes and select category
+
+6.User can adjust and do manual correction in stamps
+
+#Keynotes:
+
+-----------
+1.Test cases added would validate following business scenarios:
+
+    >To validate whether user is able to see owner of the crew in Time Tracking Page.
+    >To validate whether user is able to assign employee to a team and is displayed in Time Tracking Page.
+
+2.Current application is a good candidate for API automation as it deals with compled time logs,interacting via the UI would
+result in flaky tests.
+
+3.Delete API call would help in removing the records from DB and thus avoid the pain of creating unique data for each
+test.
+
 ## Libraries Used:
 ----------
 **1.Selenium         -** Web Automation
@@ -56,7 +86,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 5.Maven profiles are configured in the pom.xml. You can run these from IDE Terminal or any OS Terminal inside the project folder.
 **mvn clean test -Pall** - To run all the tests available in the testng.xml
 
-**Note:**User should not try to run the test from test class - Might end up in NPE. Because the listeners are configured only in testng.xml
+**Note:** User should not try to run the test from test class - Might end up in Null Poinet Exceptions,because the listeners are configured only in testng.xml
 
 #Report Interpretation
 ------------
@@ -71,4 +101,24 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 5.After each test run, reports can be found under root directory and ExtentReports folder.
 ![Screenshot](readmeimages/TestCases.png)
+
+
+#Jenkins Integration
+
+-----------
+1.This project can be easily integrated with Jenkins
+2.Login to Jenkins
+3.Create Maven Project(Add maven plugin if not present)
+![Screenshot](readmeimages/MavenProject.png)
+4.Configure choice parameters to run different maven profiles
+![Screenshot](readmeimages/ChoiceParameters.png)
+5.Configure goal and options
+![Screenshot](readmeimages/Goals.png)
+6.Choose custom workspace and give the project location
+![Screenshot](readmeimages/Workspace.png)
+7.To run,select Build with parameters -> Choose profile -> Click Build
+![Screenshot](readmeimages/Build.png)
+8.View the results in the console output
+![Screenshot](readmeimages/logs.png)
+
 
