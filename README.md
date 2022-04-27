@@ -25,7 +25,7 @@
     >To validate whether user is able to see owner of the crew in Time Tracking Page.
     >To validate whether user is able to assign employee to a team and is displayed in Time Tracking Page.
 
-2.Current application is a good candidate for API automation as it deals with compled time logs,interacting via the UI would
+2.Current application is a good candidate for API automation as it deals with complex time logs,interacting via the UI would
 result in flaky tests.
 
 3.Delete API call would help in removing the records from DB and thus avoid the pain of creating unique data for each
@@ -47,7 +47,7 @@ test.
 
 **7.Faker            -** To generate random test data
 
-Note:All the above mentioned libraries are open-source and does not include any license.
+**Note:** All the above mentioned libraries are open-source and does not include any license.
 
 #Capabilities:
 ------------
@@ -102,8 +102,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 5.After each test run, reports can be found under root directory and ExtentReports folder.
 ![Screenshot](readmeimages/TestCases.png)
 
-
-#Jenkins Integration
+# Jenkins Integration
 
 -----------
 1.This project can be integrated easily with Jenkins.

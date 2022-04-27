@@ -87,9 +87,6 @@ public final class SeleniumUtils {
             if (flag) {
                 break;
             }
-            ExtentLogger.fail(valueToFind + " is not found in the table");
-            return flag;
-
         }
         return flag;
     }
@@ -124,8 +121,7 @@ public final class SeleniumUtils {
             }
             if (flag) {
                 break;
-            }else
-               continue;
+            }
         }
 
         return flag;

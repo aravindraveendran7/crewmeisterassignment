@@ -2,7 +2,6 @@ package com.crewmeister.testdata;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Builder(setterPrefix = "set")
 @Getter
