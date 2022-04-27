@@ -28,6 +28,9 @@
 2.Current application is a good candidate for API automation as it deals with complex time logs,interacting via the UI would
 result in flaky tests.
 
+3.For the current assignment,UI automation is considered,highly recommended to do the 
+same via APIs(which requires endpoints) in the longer run.
+
 3.Delete API call would help in removing the records from DB and thus avoid the pain of creating unique data for each
 test.
 
