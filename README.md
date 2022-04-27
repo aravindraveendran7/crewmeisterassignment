@@ -115,6 +115,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 ![Screenshot](readmeimages/MavenProject.png)
 
 4.Configure choice parameters to run different maven profiles
+
 ![Screenshot](readmeimages/ChoiceParameters.png)
 
 5.Configure goal and options
